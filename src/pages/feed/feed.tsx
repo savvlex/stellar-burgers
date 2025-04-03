@@ -11,7 +11,7 @@ export const Feed: FC = () => {
 
   useEffect(() => {
     dispatch(fetchFeed());
-  }, [feedData]);
+  }, []);
 
   if (!feedData.length) {
     return <Preloader />;

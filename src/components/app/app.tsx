@@ -42,9 +42,12 @@ const App = () => {
   return (
     <div className={styles.app}>
       <AppHeader />
+
       <Routes location={backgroundLocation || location}>
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
+        <Route path='/feed/:number' element={<OrderInfo />} />
+        <Route path='/ingredients/:id' element={<IngredientDetails />} />
         <Route
           path='/login'
           element={
@@ -102,8 +105,8 @@ const App = () => {
           }
         />
         <Route path='*' element={<NotFound404 />} />
-        <Route path='/ingredients/:id' element={<IngredientDetails />} />
       </Routes>
+
       {backgroundLocation && (
         <Routes>
           <Route
@@ -125,7 +128,7 @@ const App = () => {
           <Route
             path='/profile/orders/:number'
             element={
-              <Modal title='заказ по номеру из профеля' onClose={stepBack}>
+              <Modal title='заказ по номеру из профиля' onClose={stepBack}>
                 <ProtectedRoute>
                   <OrderInfo />
                 </ProtectedRoute>
