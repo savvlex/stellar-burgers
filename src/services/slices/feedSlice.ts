@@ -10,7 +10,7 @@ type TFeedModule = {
   errorMessage: string | null;
 };
 
-const defaultFeedState: TFeedModule = {
+export const initialState: TFeedModule = {
   list: [],
   countTotal: 0,
   countToday: 0,
@@ -22,7 +22,7 @@ export const fetchFeed = createAsyncThunk('feed/fetchFeed', getFeedsApi);
 
 const feedModule = createSlice({
   name: 'feed',
-  initialState: defaultFeedState,
+  initialState: initialState,
   reducers: {},
   selectors: {
     selectFeedList: (state) => state.list,

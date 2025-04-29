@@ -11,7 +11,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { setCookie, deleteCookie } from '../../utils/cookie';
 import { TUser } from '@utils-types';
 
-type TState = {
+export type TState = {
   currentUser: TUser | null;
   isLoading: boolean;
   errorMessage: string | null;
@@ -19,7 +19,7 @@ type TState = {
   authChecked: boolean;
 };
 
-const initialState: TState = {
+export const initialState: TState = {
   currentUser: null,
   isLoading: false,
   errorMessage: null,

@@ -12,3 +12,5 @@ export const rootReducer = combineReducers({
   order: orderReducer,
   feed: feedReducer
 });
+
+export type RootState = ReturnType<typeof rootReducer>;
