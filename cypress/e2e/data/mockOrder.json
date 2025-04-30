@@ -1,0 +1,17 @@
+{
+    "success": true,
+    "name": "Собранный бургер",
+    "order": {
+      "_id": "6650e0d54a3c1f001c8db8b7",
+      "status": "done",
+      "name": "Собранный бургер",
+      "createdAt": "2025-04-29T17:00:00.000Z",
+      "updatedAt": "2025-04-29T17:00:00.000Z",
+      "number": 12345,
+      "ingredients": [
+        "643d69a5c3f7b9001cfa093c",
+        "643d69a5c3f7b9001cfa0941",
+        "643d69a5c3f7b9001cfa0942"
+      ]
+    }
+}

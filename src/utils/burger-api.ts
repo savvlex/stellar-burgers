@@ -77,6 +77,10 @@ export const getIngredientsApi = () =>
     .then((data) => {
       if (data?.success) return data.data;
       return Promise.reject(data);
+    })
+    .catch((err) => {
+      console.error(`Ошибка при получении ингредиентов ${URL}: `, err);
+      return Promise.reject(err);
     });
 
 export const getFeedsApi = () =>
