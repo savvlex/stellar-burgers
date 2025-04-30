@@ -31,7 +31,7 @@ describe('Order Placement', () => {
     }).as('getUser');
 
     // Переходим на сайт
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
     cy.wait('@getIngredients');
   });
 

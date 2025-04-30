@@ -25,7 +25,6 @@ const App = () => {
   const backgroundLocation = location.state?.background;
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const stepBack = () => {
     navigate(-1);
   };

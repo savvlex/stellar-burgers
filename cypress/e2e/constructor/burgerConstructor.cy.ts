@@ -7,14 +7,14 @@ describe('Burger Constructor', () => {
 
   beforeEach(() => {
     cy.intercept('GET', '/api/ingredients', { statusCode: 200, body: mockIngredients }).as('getIngredients');
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
     cy.wait('@getIngredients').then(() => {
       bun = mockIngredients.data.find((item: TIngredient) => item.type === 'bun') as TIngredient;
       mainIngredient = mockIngredients.data.find((item: TIngredient) => item.type === 'main') as TIngredient;
     });
   });
 
-  it('should correctly add bun', () => {
+  it('should correctly add bun and main', () => {
     cy.get('[data-cy^="ingredient-card-"]').should('exist');
     cy.get(`[data-cy="add-ingredient-${bun._id}"]`).find('button').click();
     cy.get('[data-cy="bun-top"]').should('exist').and('contain', bun.name);
